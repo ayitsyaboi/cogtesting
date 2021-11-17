@@ -34,7 +34,7 @@ msgstr ""
 #: anonreporter\anonreporter.py:91 anonreporter\anonreporter.py:102
 msgid ""
 "**New anonymous report:**\n"
-"{report}"
+"`{report}`"
 msgstr ""
 
 #: anonreporter\anonreporter.py:95
