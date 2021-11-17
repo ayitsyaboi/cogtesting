@@ -66,9 +66,9 @@ class AnonReporter(commands.Cog):
         if not text:
             if channel := await self.config.guild(ctx.guild).channel():
                 try:
-                    await ctx.author.send(_("Send your report here. You have 120s."))
+                    await ctx.author.send(_("Send your report here. You have 5 minutes."))
                     text = (
-                        await self.bot.wait_for("message", check=msgcheck, timeout=120)
+                        await self.bot.wait_for("message", check=msgcheck, timeout=300)
                     ).content
                 except discord.HTTPException:
                     await ctx.send(
@@ -93,7 +93,7 @@ class AnonReporter(commands.Cog):
             )
             await ctx.tick()
         else:
-            await ctx.send(_("Text to short or to long."), delete_after=15)
+            await ctx.send(_("Text too short or too long."), delete_after=15)
 
     @commands.command()
     async def botreport(self, ctx, text: str):
